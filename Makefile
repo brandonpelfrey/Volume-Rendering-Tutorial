@@ -34,6 +34,7 @@ all:
 	@echo "\nLine sum: ${SUM}"
 
 $(BINDIR)/$(NAME) : $(SRC:.cpp=.o)
+	@mkdir -p $(BINDIR)
 	@$(CXX) -o $@ $(SRC:.cpp=.o) $(LIB) $(OPT)
 	@echo "Linking $@..."
 
