@@ -86,6 +86,9 @@ void VolumeRenderer::render(const Vec3& cameraPosition, const Vec3& cameraFocus,
 					// Hint at the future... We can play with the light absorption. (You can ignore this if you want.)
 					lightValue = powf(lightValue, 3.f);
 
+					// Let's also boost the amount of light so that everything is brighter.
+					lightValue *= 5;
+
 					// Numerical integration of the path integral. Theory will be covered in
 					// tutorial two.
 					float dT = expf(density * -ds * kappa);
