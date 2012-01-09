@@ -25,6 +25,7 @@ public:
 		*		@param[in] cameraFocus A point in space which will be the center of the image.
 		*		@param[in] marchDistance The maximum distance that will be marched away from the camera.
 		*		@param[in] marchingStepCount The number of steps to march along the path from the camera into the scene.
+  *		@param[in] dsm The dsm to use for calculating lighting attenuation.
 		*/
 	void render(const Vec3& cameraPosition, const Vec3& cameraFocus, float marchDistance, int marchingStepCount, const Grid& dsm);
 

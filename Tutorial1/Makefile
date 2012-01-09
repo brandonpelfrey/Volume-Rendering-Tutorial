@@ -31,7 +31,7 @@ endif
 all:
 	@make --no-print-directory depend
 	@make --no-print-directory $(BINDIR)/$(NAME) #DEP=1
-	@echo "\nLine sum: ${SUM}"
+	@echo "Line sum: ${SUM}"
 
 $(BINDIR)/$(NAME) : $(SRC:.cpp=.o)
 	@mkdir -p $(BINDIR)

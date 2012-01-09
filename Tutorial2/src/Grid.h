@@ -19,6 +19,7 @@ public:
 		*  @param[in] _nz Z-axis resolution of the grid
 		*  @param[in] _bmin The lower corner of the AABB for the grid
 		*  @param[in] _bmax The upper corner of the AABB for the grid
+  *  @param[in] _default_value The default value that is returned outside the grid
 		*/
 	Grid(int _nx, int _ny, int _nz, Vec3 _bmin, Vec3 _bmax, float _default_value=0.f);
 
@@ -31,7 +32,12 @@ public:
 
 	const int* getDimensions() const { return res; }
 
-	//! Compute a Deep Shadow Map based on the density of another grid.
+	/*! Compute a Deep Shadow Map based on the density of another grid.
+  *  @param[in] density The field to evaluate against
+  *  @param[in] kappa The volume scattering coefficient
+  *  @param[in] ds The volume step size
+  *  @param[in] lightPosition The position of the light that we're using for illumination.
+  */
  void computeDSM(const Grid& density, const float kappa, const float ds, const Vec3& lightPosition);
 
 };
